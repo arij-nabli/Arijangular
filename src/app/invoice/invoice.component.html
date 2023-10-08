@@ -1,0 +1,13 @@
+<!-- invoice.component.html -->
+<h2>Invoice Details</h2>
+<div *ngIf="invoice && invoice.active"> <!-- Vérifiez que la facture est active -->
+  <p>ID: {{ invoice.idFacture }}</p>
+  <p>Montant Facture: {{ invoice.montantFacture }}</p>
+  <p>Montant Remise: {{ invoice.montantRemise }}</p>
+  <p>Date Facture: {{ invoice.dateFacture }}</p>
+  <p>Active: {{ invoice.active }}</p>
+</div>
+<div *ngIf="!invoice || !invoice.active"> <!-- Si la facture est inactive ou si 'invoice' est null -->
+  <p>Impossible de visualiser les détails de la facture.</p>
+</div>
+<button (click)="retourVersMainInvoice()">Retour</button>
